@@ -75,7 +75,7 @@ jobs:
           context: ./docker/teslalogger
           push: ${{ github.event_name != 'pull_request' }}
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: foo:bar
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-app:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
